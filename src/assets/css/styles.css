@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .primary-gradient {
+        @apply bg-gradient-to-r from-sky-400 to-red-400;
+    }
+
+    .text-gradient-blue-to-red {
+        @apply text-transparent bg-clip-text primary-gradient;
+    }
+}

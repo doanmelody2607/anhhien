@@ -1,0 +1,12 @@
+---
+eleventyNavigation:
+    key: Blog
+    order: 2
+pagination:
+    data: collections.paginateBlogs
+    size: 1
+    alias: paged
+permalink: '/blogs/{% if paged.number > 1 %}page-{{ paged.number }}/{% endif %}index.html'
+---
+
+<div class="flex flex-wrap -mx-2">{% include "partials/bloglist.njk" %}</div>

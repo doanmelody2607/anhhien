@@ -1,0 +1,50 @@
+<header
+    class="w-full p-6 mx-auto h-[60px] bg-white border-b-2 shadow-sm flex items-center justify-between fixed inset-0 z-50"
+>
+    {# Left section #}
+    <div class="flex items-center justify-start space-x-5">
+        {# Logo #}
+        <a href="/">
+            <img
+                class="h-10 w-auto block dark:hidden"
+                src="{{ '/assets/img/logo.png' }}"
+                alt="Your Company"
+            />
+        </a>
+
+        {# class="px-2 py-1 rounded-lg duration-500 hover:bg-sky-200 {% if
+        navItem.url == page.url %} bg-sky-200 {% endif %}" #} {# Navigation #}
+        <div class="space-x-6 text-black flex">
+            {% for navItem in collections.all | eleventyNavigation %}
+            <a
+                href="{{ navItem.url | url }}"
+                class="relative w-fit block after:block after:content-[''] after:absolute after:h-[5px] after:primary-gradient after:rounded-sm after:w-full after:scale-x-0 after:opacity-0 after:hover:opacity-100 after:hover:scale-x-100 after:transition after:duration-500 after:origin-left {% if navItem.url == page.url %} after:opacity-100 after:scale-x-100 {% endif %}"
+                >{{ navItem.title }}</a
+            >
+            {% endfor %}
+        </div>
+    </div>
+
+    {# Right section #}
+    <div>
+        <button
+            class="cursor-pointer p-2 text-black rounded-full hover:bg-gradient-to-r hover:from-sky-200 hover:to-red-200 hover:duration-500 active:scale-75"
+        >
+            <svg
+                class="text-black"
+                id="moon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentcolor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+</header>
